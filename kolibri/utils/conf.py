@@ -50,8 +50,7 @@ config['INSTALLED_APPS'] = [
     "kolibri.plugins.audio_mp3_render",
     "kolibri.plugins.setup_wizard",
     "kolibri.plugins.coach_tools",
-    "kolibri.plugins.user",
-    "exercise_perseus_renderer"
+    "kolibri.plugins.user"
 ]
 
 #: Well-known plugin names that are automatically searched for and enabled on
