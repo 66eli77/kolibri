@@ -74,13 +74,13 @@
           params: { channel_id: channelId },
         });
       },
-      handleTabClick(tabIndex) {
-        switch (tabIndex) {
-          case 0:
+      handleTabClick(tab_id) {
+        switch (tab_id) {
+          case 'Recommended':
             this.$router.push({ name: constants.PageNames.LEARN_ROOT });
             return;
 
-          case 1:
+          case 'Topics':
             this.$router.push({ name: constants.PageNames.EXPLORE_ROOT });
             return;
 

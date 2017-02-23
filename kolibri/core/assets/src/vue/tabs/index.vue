@@ -1,12 +1,13 @@
 <template>
 
   <ui-tabs
-    ref="tabs"
     class="tabs"
     :type="type"
-    :disableRipple="true">
+    :disableRipple="true"
+    @tab-change="handleTabClick">
     <ui-tab
       v-for="item in items"
+      :id="item.title"
       :title="item.title"
       :icon="item.icon"
       :selected="itemIsSelected(item)"
@@ -38,13 +39,8 @@
       'ui-tab': require('keen-ui/src/UiTab'),
     },
     methods: {
-      addTabListeners() {
-        const tabs = this.$refs.tabs.$el.querySelectorAll('.ui-tab-header-item');
-        tabs.forEach((tab, index) => {
-          tab.addEventListener('click', () => {
-            this.$emit('tabclicked', index);
-          }, false);
-        });
+      handleTabClick(tab_id) {
+        this.$emit('tabclicked', tab_id);
       },
       itemIsSelected(item) {
         return item.selected && (item.selected === true);
